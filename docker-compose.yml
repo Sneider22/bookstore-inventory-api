@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+
+  # ── Backend: Django REST API ─────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bookstore_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings
+      # Apunta la BD al directorio montado como volumen (evita el bug de
+      # Docker que crea una carpeta db.sqlite3/ si se monta un archivo suelto)
+      - DB_PATH=/app/data/db.sqlite3
+    volumes:
+      # Se monta una CARPETA, no un archivo suelto, para evitar que Docker
+      # cree una carpeta "db.sqlite3/" en lugar del archivo al arrancar por primera vez
+      - sqlite_data:/app/data
+    healthcheck:
+      # python:3.12-slim NO trae curl. Usamos urllib de la librería estándar.
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/books')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 25s
+    restart: unless-stopped
+
+  # ── Frontend: React + Vite servido por nginx ─────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # La URL que el navegador usará para llamar al backend.
+        # En Docker Desktop (Windows/Mac) localhost funciona porque los puertos
+        # están mapeados al host. En Linux usa la IP del host si es necesario.
+        VITE_API_URL: http://localhost:8000
+    container_name: bookstore_frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  # Volumen nombrado para la carpeta de datos — Docker lo gestiona de forma segura
+  sqlite_data:

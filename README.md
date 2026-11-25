@@ -79,9 +79,10 @@ Al invocar `POST /books/{id}/calculate-price`, el servicio [`books/services.py`]
 1. Consulta la tasa de cambio vigente `USD -> currency` (por defecto `EUR`) en `https://api.exchangerate-api.com/v4/latest/USD` con timeout de 5 segundos.
 2. Convierte el costo original a moneda local y aplica un **margen de ganancia fijo del 40%** (`ROUND_HALF_UP` a 2 decimales):
 
-$$\text{cost\_local} = \text{cost\_usd} \times \text{exchange\_rate}$$
-
-$$\text{selling\_price\_local} = \text{cost\_local} \times 1.40$$
+```text
+cost_local          = cost_usd × exchange_rate
+selling_price_local = cost_local × 1.40
+```
 
 3. **Persistencia en base de datos:** Guarda en el modelo `Book` tanto `selling_price_local` como `price_currency` y `price_exchange_rate`, permitiendo consultar el desglose completo en el modal de detalle incluso tras recargar la página.
 4. **Manejo de fallback:** Si la API externa falla, tarda más de 5 segundos o no soporta la moneda, el sistema registra una advertencia en logs y aplica `FALLBACK_RATES` (`EUR: 0.85`, `VES: 45.00`, `USD: 1.00`), devolviendo `used_fallback: true` sin interrumpir la operación (`200 OK`).

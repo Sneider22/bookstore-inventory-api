@@ -1,0 +1,416 @@
+[
+{
+  "model": "books.book",
+  "pk": 1,
+  "fields": {
+    "title": "El Quijote",
+    "author": "Miguel de Cervantes",
+    "isbn": "978-84-376-0494-7",
+    "cost_usd": "15.99",
+    "selling_price_local": "20.41",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 25,
+    "category": "Literatura Clásica",
+    "supplier_country": "ES",
+    "created_at": "2026-11-25T01:22:27.701Z",
+    "updated_at": "2026-11-25T04:50:42.426Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 2,
+  "fields": {
+    "title": "El extranjero",
+    "author": "Albert Camus",
+    "isbn": "978-84-206-3416-6",
+    "cost_usd": "17.82",
+    "selling_price_local": "22.75",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 13,
+    "category": "Novela",
+    "supplier_country": "ES",
+    "created_at": "2026-11-25T01:43:05.211Z",
+    "updated_at": "2026-11-25T04:50:50.768Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 3,
+  "fields": {
+    "title": "Crimen y castigo",
+    "author": "Fiódor Dostoievski",
+    "isbn": "978-84-206-7420-9",
+    "cost_usd": "28.50",
+    "selling_price_local": "36.39",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 10,
+    "category": "Literatura Clásica",
+    "supplier_country": "RU",
+    "created_at": "2026-11-25T01:46:11.510Z",
+    "updated_at": "2026-11-25T04:50:54.279Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 4,
+  "fields": {
+    "title": "Harry Potter y la piedra filosofal",
+    "author": "J.K. Rowling",
+    "isbn": "978-84-7888-445-2",
+    "cost_usd": "22.90",
+    "selling_price_local": "29.23",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 7,
+    "category": "Fantasía",
+    "supplier_country": "UK",
+    "created_at": "2026-11-25T01:46:48.581Z",
+    "updated_at": "2026-11-25T04:51:00.832Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 5,
+  "fields": {
+    "title": "La metamorfosis",
+    "author": "Franz Kafka",
+    "isbn": "978-84-206-5136-1",
+    "cost_usd": "22.60",
+    "selling_price_local": "29189.80",
+    "price_currency": "VES",
+    "price_exchange_rate": "922.560000",
+    "stock_quantity": 4,
+    "category": "Novela",
+    "supplier_country": "CZ",
+    "created_at": "2026-11-25T01:47:31.246Z",
+    "updated_at": "2026-11-25T04:51:06.250Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 6,
+  "fields": {
+    "title": "El mito de Sísifo",
+    "author": "Albert Camus",
+    "isbn": "978-84-206-7422-3",
+    "cost_usd": "14.50",
+    "selling_price_local": "18727.97",
+    "price_currency": "VES",
+    "price_exchange_rate": "922.560000",
+    "stock_quantity": 16,
+    "category": "Filosofía",
+    "supplier_country": "FR",
+    "created_at": "2026-11-25T02:19:48.448Z",
+    "updated_at": "2026-11-25T04:51:12.939Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 7,
+  "fields": {
+    "title": "Cartas a Lucilio",
+    "author": "Lucio Anneo Séneca",
+    "isbn": "978-84-249-3641-9",
+    "cost_usd": "19.99",
+    "selling_price_local": "98400.18",
+    "price_currency": "COP",
+    "price_exchange_rate": "3516.050000",
+    "stock_quantity": 9,
+    "category": "Filosofía",
+    "supplier_country": "ES",
+    "created_at": "2026-11-25T02:23:02.190Z",
+    "updated_at": "2026-11-25T04:51:22.121Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 8,
+  "fields": {
+    "title": "El amor en los tiempos del cólera",
+    "author": "Gabriel García Márquez",
+    "isbn": "978-84-397-2836-8",
+    "cost_usd": "17.40",
+    "selling_price_local": "22.22",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 22,
+    "category": "Novela",
+    "supplier_country": "CO",
+    "created_at": "2026-11-25T02:24:13.971Z",
+    "updated_at": "2026-11-25T04:51:25.604Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 9,
+  "fields": {
+    "title": "Indigno de ser humano",
+    "author": "Osamu Dazai",
+    "isbn": "978-84-943-2864-0",
+    "cost_usd": "15.80",
+    "selling_price_local": "428.68",
+    "price_currency": null,
+    "price_exchange_rate": null,
+    "stock_quantity": 18,
+    "category": "Ficción",
+    "supplier_country": "JP",
+    "created_at": "2026-11-25T02:24:48.343Z",
+    "updated_at": "2026-11-25T02:33:55.260Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 10,
+  "fields": {
+    "title": "La náusea",
+    "author": "Jean-Paul Sartre",
+    "isbn": "978-84-206-3417-3",
+    "cost_usd": "13.90",
+    "selling_price_local": "17.75",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 1,
+    "category": "Filosofía",
+    "supplier_country": "FR",
+    "created_at": "2026-11-25T02:25:30.584Z",
+    "updated_at": "2026-11-25T04:51:29.032Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 11,
+  "fields": {
+    "title": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "isbn": "978-84-397-2835-1",
+    "cost_usd": "19.50",
+    "selling_price_local": "24.89",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 28,
+    "category": "Realismo Mágico",
+    "supplier_country": "CO",
+    "created_at": "2026-11-25T02:27:00.677Z",
+    "updated_at": "2026-11-25T04:51:46.491Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 12,
+  "fields": {
+    "title": "Desolación",
+    "author": "Gabriela Mistral",
+    "isbn": "978-95-611-1892-8",
+    "cost_usd": "14.10",
+    "selling_price_local": null,
+    "price_currency": null,
+    "price_exchange_rate": null,
+    "stock_quantity": 7,
+    "category": "Poesía",
+    "supplier_country": "CL",
+    "created_at": "2026-11-25T02:27:30.402Z",
+    "updated_at": "2026-11-25T02:27:30.402Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 13,
+  "fields": {
+    "title": "Mujercitas",
+    "author": "Louisa May Alcott",
+    "isbn": "978-84-910-5132-9",
+    "cost_usd": "16.50",
+    "selling_price_local": "21.07",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 19,
+    "category": "Clásicos",
+    "supplier_country": "US",
+    "created_at": "2026-11-25T02:28:13.851Z",
+    "updated_at": "2026-11-25T04:51:49.713Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 14,
+  "fields": {
+    "title": "Orgullo y prejuicio",
+    "author": "Jane Austen",
+    "isbn": "978-84-910-5133-6",
+    "cost_usd": "14.80",
+    "selling_price_local": "19115.45",
+    "price_currency": "VES",
+    "price_exchange_rate": "922.560000",
+    "stock_quantity": 21,
+    "category": "Romance",
+    "supplier_country": "UK",
+    "created_at": "2026-11-25T02:28:52.234Z",
+    "updated_at": "2026-11-25T04:52:24.486Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 15,
+  "fields": {
+    "title": "El hombre en busca de sentido",
+    "author": "Viktor Frankl",
+    "isbn": "978-84-254-3202-6",
+    "cost_usd": "14.20",
+    "selling_price_local": null,
+    "price_currency": null,
+    "price_exchange_rate": null,
+    "stock_quantity": 23,
+    "category": "Psicología",
+    "supplier_country": "AT",
+    "created_at": "2026-11-25T02:53:12.017Z",
+    "updated_at": "2026-11-25T02:53:12.017Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 16,
+  "fields": {
+    "title": "Meditaciones",
+    "author": "Marco Aurelio",
+    "isbn": "978-84-249-3642-6",
+    "cost_usd": "16.00",
+    "selling_price_local": null,
+    "price_currency": null,
+    "price_exchange_rate": null,
+    "stock_quantity": 19,
+    "category": "Filosofía",
+    "supplier_country": "IT",
+    "created_at": "2026-11-25T02:53:50.085Z",
+    "updated_at": "2026-11-25T02:53:50.085Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 17,
+  "fields": {
+    "title": "El Príncipe",
+    "author": "Nicolás Maquiavelo",
+    "isbn": "978-84-206-7423-0",
+    "cost_usd": "13.80",
+    "selling_price_local": "17823.86",
+    "price_currency": "VES",
+    "price_exchange_rate": "922.560000",
+    "stock_quantity": 17,
+    "category": "Política",
+    "supplier_country": "IT",
+    "created_at": "2026-11-25T02:55:15.808Z",
+    "updated_at": "2026-11-25T04:52:18.345Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 18,
+  "fields": {
+    "title": "El origen de las especies",
+    "author": "Charles Darwin",
+    "isbn": "978-84-206-7424-7",
+    "cost_usd": "19.40",
+    "selling_price_local": null,
+    "price_currency": null,
+    "price_exchange_rate": null,
+    "stock_quantity": 7,
+    "category": "Ciencia",
+    "supplier_country": "UK",
+    "created_at": "2026-11-25T02:56:14.031Z",
+    "updated_at": "2026-11-25T02:56:14.031Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 19,
+  "fields": {
+    "title": "Discurso del método",
+    "author": "René Descartes",
+    "isbn": "978-84-206-7425-4",
+    "cost_usd": "14.60",
+    "selling_price_local": null,
+    "price_currency": null,
+    "price_exchange_rate": null,
+    "stock_quantity": 9,
+    "category": "Filosofía",
+    "supplier_country": "FR",
+    "created_at": "2026-11-25T02:57:40.264Z",
+    "updated_at": "2026-11-25T02:57:40.264Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 20,
+  "fields": {
+    "title": "Breve historia del tiempo",
+    "author": "Stephen Hawking",
+    "isbn": "978-84-989-2437-4",
+    "cost_usd": "18.90",
+    "selling_price_local": "24.14",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 16,
+    "category": "Física",
+    "supplier_country": "UK",
+    "created_at": "2026-11-25T03:09:41.340Z",
+    "updated_at": "2026-11-25T04:52:02.163Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 21,
+  "fields": {
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "isbn": "978-84-080-5304-0",
+    "cost_usd": "22.00",
+    "selling_price_local": null,
+    "price_currency": null,
+    "price_exchange_rate": null,
+    "stock_quantity": 33,
+    "category": "Astrofísica",
+    "supplier_country": "US",
+    "created_at": "2026-11-25T03:10:34.580Z",
+    "updated_at": "2026-11-25T03:10:34.580Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 22,
+  "fields": {
+    "title": "Muerte y vida de las grandes ciudades",
+    "author": "Jane Jacobs",
+    "isbn": "978-84-940-2645-4",
+    "cost_usd": "24.90",
+    "selling_price_local": "31.79",
+    "price_currency": "EUR",
+    "price_exchange_rate": "0.912000",
+    "stock_quantity": 12,
+    "category": "Urbanismo",
+    "supplier_country": "US",
+    "created_at": "2026-11-25T03:11:29.836Z",
+    "updated_at": "2026-11-25T04:52:07.712Z"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 24,
+  "fields": {
+    "title": "El resplandor",
+    "author": "Stephen King",
+    "isbn": "978-84-975-9379-3",
+    "cost_usd": "18.50",
+    "selling_price_local": null,
+    "price_currency": null,
+    "price_exchange_rate": null,
+    "stock_quantity": 17,
+    "category": "Terror",
+    "supplier_country": "US",
+    "created_at": "2026-11-25T03:12:49.252Z",
+    "updated_at": "2026-11-25T03:12:49.252Z"
+  }
+}
+]

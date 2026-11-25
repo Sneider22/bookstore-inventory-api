@@ -845,7 +845,7 @@ export function App() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col overflow-x-clip bg-[#f8faf9] text-slate-900 transition-colors duration-200 dark:bg-[#09090b] dark:text-zinc-100">
+    <div className="flex min-h-screen flex-col overflow-x-clip bg-[#eef3f0] text-slate-900 transition-colors duration-200 dark:bg-[#09090b] dark:text-zinc-100">
       {/* Header */}
       <header className="border-b border-slate-200 bg-white transition-colors dark:border-zinc-800/90 dark:bg-[#121215]">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6 sm:py-4">
@@ -1074,7 +1074,10 @@ export function App() {
             </form>
 
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-1.5">
+              <form
+                onSubmit={(e) => { e.preventDefault(); handleLowStockToggle(); }}
+                className="flex items-center gap-1.5"
+              >
                 <label className="text-xs font-medium text-slate-500 dark:text-zinc-400">
                   Stock ≤
                 </label>
@@ -1084,11 +1087,11 @@ export function App() {
                   step="1"
                   value={thresholdInput}
                   onChange={(e) => setThresholdInput(e.target.value)}
+                  aria-label="Umbral de stock bajo"
                   className="w-14 rounded-xl border border-slate-200 bg-white px-2 py-1.5 text-center text-sm text-slate-900 focus:border-[#0d5451] focus:outline-none dark:border-zinc-700/80 dark:bg-zinc-950/80 dark:text-zinc-100 dark:focus:border-emerald-500"
                 />
                 <button
-                  type="button"
-                  onClick={handleLowStockToggle}
+                  type="submit"
                   className={`inline-flex items-center gap-1.5 rounded-xl border px-3 py-1.5 text-xs font-medium sm:text-sm ${
                     backendMode === 'low-stock'
                       ? 'border-amber-400 bg-amber-100 text-amber-900 dark:border-amber-700/70 dark:bg-amber-950/70 dark:text-amber-300'
@@ -1098,7 +1101,7 @@ export function App() {
                   <AlertTriangle className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   Low Stock
                 </button>
-              </div>
+              </form>
 
               <div className="flex items-center gap-1.5">
                 <button
@@ -1123,11 +1126,10 @@ export function App() {
                   <button
                     type="button"
                     onClick={handleResetAll}
-                    className="inline-flex items-center gap-1 rounded-xl border border-slate-200 bg-white px-2.5 py-1.5 text-xs text-slate-600 hover:bg-slate-50 sm:text-sm dark:border-zinc-700 dark:bg-zinc-800/90 dark:text-zinc-200 dark:hover:bg-zinc-700/80"
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-[#0d5451]/50 bg-[#0d5451]/10 px-3 py-1.5 text-xs font-semibold text-[#0d5451] transition hover:bg-[#0d5451]/20 sm:text-sm dark:border-emerald-700/60 dark:bg-emerald-950/60 dark:text-emerald-300 dark:hover:bg-emerald-950/90"
                   >
                     <X className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Ver todos</span>
-                    <span className="sm:hidden">Limpiar</span>
+                    Limpiar filtros
                   </button>
                 )}
               </div>

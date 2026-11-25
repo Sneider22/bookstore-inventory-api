@@ -1,0 +1,259 @@
+{
+  "info": {
+    "name": "Bookstore Inventory API",
+    "description": "Colección de endpoints para la API de gestión de inventario de librería (Django REST Framework). Incluye CRUD completo, filtros por categoría y stock bajo, y cálculo de precio local con tasa de cambio.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "book_id",
+      "value": "1",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Crear libro (POST /books)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"El nombre de la rosa\",\n  \"author\": \"Umberto Eco\",\n  \"isbn\": \"978-84-264-1547-9\",\n  \"cost_usd\": 21.50,\n  \"stock_quantity\": 14,\n  \"category\": \"Filosofía\",\n  \"supplier_country\": \"IT\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/books",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books"
+          ]
+        },
+        "description": "Crea un nuevo libro en el inventario. El campo selling_price_local inicia en null hasta ejecutar /calculate-price."
+      },
+      "response": []
+    },
+    {
+      "name": "2. Listar libros (GET /books)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/books",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books"
+          ]
+        },
+        "description": "Lista los libros registrados de forma paginada."
+      },
+      "response": []
+    },
+    {
+      "name": "3. Obtener libro por ID (GET /books/{{book_id}})",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/books/{{book_id}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books",
+            "{{book_id}}"
+          ]
+        },
+        "description": "Obtiene el detalle completo de un libro por su ID."
+      },
+      "response": []
+    },
+    {
+      "name": "4. Actualizar libro completo (PUT /books/{{book_id}})",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"El Quijote (Edición Especial)\",\n  \"author\": \"Miguel de Cervantes\",\n  \"isbn\": \"978-84-376-0494-7\",\n  \"cost_usd\": 16.50,\n  \"stock_quantity\": 30,\n  \"category\": \"Literatura Clásica\",\n  \"supplier_country\": \"ES\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/books/{{book_id}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books",
+            "{{book_id}}"
+          ]
+        },
+        "description": "Actualiza todos los campos editables de un libro existente."
+      },
+      "response": []
+    },
+    {
+      "name": "5. Actualizar stock parcial (PATCH /books/{{book_id}})",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"stock_quantity\": 12\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/books/{{book_id}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books",
+            "{{book_id}}"
+          ]
+        },
+        "description": "Actualiza parcialmente el stock de un libro."
+      },
+      "response": []
+    },
+    {
+      "name": "6. Eliminar libro (DELETE /books/{{book_id}})",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/books/{{book_id}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books",
+            "{{book_id}}"
+          ]
+        },
+        "description": "Elimina un libro del inventario (retorna 204 No Content)."
+      },
+      "response": []
+    },
+    {
+      "name": "7. Buscar por categoría (GET /books/search)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/books/search?category=Filosofía",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Filosofía"
+            }
+          ]
+        },
+        "description": "Filtra libros por categoría (búsqueda parcial insensible a mayúsculas)."
+      },
+      "response": []
+    },
+    {
+      "name": "8. Alerta de stock bajo (GET /books/low-stock)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/books/low-stock?threshold=10",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books",
+            "low-stock"
+          ],
+          "query": [
+            {
+              "key": "threshold",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Retorna libros con stock_quantity <= threshold (por defecto 10), ordenados por stock ascendente."
+      },
+      "response": []
+    },
+    {
+      "name": "9. Calcular precio local (POST /books/{{book_id}}/calculate-price)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"currency\": \"EUR\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/books/{{book_id}}/calculate-price",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books",
+            "{{book_id}}",
+            "calculate-price"
+          ]
+        },
+        "description": "Calcula el precio de venta local usando la tasa de cambio actual (o tasa de respaldo si falla la API externa) más un margen del 40%, y persiste el resultado en la base de datos."
+      },
+      "response": []
+    }
+  ]
+}

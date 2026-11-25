@@ -26,7 +26,7 @@ Sistema integral de gestión de inventario para librería compuesto por una **AP
       <img src="doc/screenshots/dashboard-light.png" alt="Dashboard Vista Tabla" height="295" />
     </td>
     <td width="50%" align="center" valign="middle">
-      <img src="doc/screenshots/dashboard-cards.png" alt="Dashboard Vista Tarjetas" height="95" />
+      <img src="doc/screenshots/dashboard-cards.png" alt="Dashboard Vista Tarjetas" height="295" />
     </td>
   </tr>
   <tr>
